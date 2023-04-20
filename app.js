@@ -30,12 +30,12 @@ setPlayerTurn(currentPlayer);
 resetButton.addEventListener("click", resetGame);
 
 function setPlayerTurn(player) {
-const playerTurn = document.querySelector("#player-turn");
-playerTurn.textContent = `Ходит игрок: ${player}`;
+let playerTurn = document.querySelector("#player-turn");
+playerTurn.textContent = `Player turn: ${player}`;
 }
 
 function checkWin() {
-const winningCombos = [
+let winningCombos = [
     [0, 1, 2],
     [3, 4, 5],
     [6, 7, 8],
@@ -49,10 +49,10 @@ const winningCombos = [
 let winner = null;
 
 for (let i = 0; i < winningCombos.length; i++) {
-    const combo = winningCombos[i];
-    const a = cells[combo[0]].innerHTML;
-    const b = cells[combo[1]].innerHTML;
-    const c = cells[combo[2]].innerHTML;
+    let combo = winningCombos[i];
+    let a = cells[combo[0]].innerHTML;
+    let b = cells[combo[1]].innerHTML;
+    let c = cells[combo[2]].innerHTML;
     if (a !== "" && a === b && b === c) {
     winner = a;
     break;
